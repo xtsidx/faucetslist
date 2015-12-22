@@ -1,0 +1,158 @@
+.faucet {
+    border-bottom: 1px solid #ddd;
+    padding-top: 1em;
+}
+
+.faucet .link {
+    font-size: 1.2em;
+}
+
+.faucet .time {
+    text-align: center;
+}
+
+/* SHOW & HIDE */
+
+.faucet div.ifhidden {
+    display: none;
+    font-size: 0.6em;
+    background-color: #fafafa;
+    cursor: pointer;
+}
+
+.faucet div.ifhidden:hover {
+    background-color: #eee;
+}
+
+.faucet.hidden {
+    display: block;
+    padding-top: 0;
+}
+
+.faucet.hidden div.ifhidden {
+    display: block;
+}
+
+.faucet.hidden .columns {
+    display: none;
+}
+
+.faucet a.eye {
+    font-size: 1.6em;
+}
+
+/* === */
+
+/* LIKE & DISLIKE */
+
+.faucet a.like,
+.faucet a.dislike {
+    font-size: 1.6em;
+    color: #eee;
+    text-shadow: 0 0 1px black;
+    padding: 0 0.1em;
+}
+
+.faucet.like a.like,
+.faucet.dislike a.dislike{
+    text-shadow: 1px 1px 1px black;
+    font-size: 1.9em;
+}
+
+.faucet.like a.like {
+    color: #19a15f;
+}
+
+.faucet.dislike a.dislike {
+    color: #ffce44;
+}
+
+.faucet.like {
+    background-color: #F5FFF5;
+}
+
+.faucet.dislike {
+    opacity: 0.3;
+}
+
+/* === */
+
+/* STAR */
+
+.faucet .star {
+    font-size: 2em;
+    color: #ddd;
+}
+
+.faucet .star:hover {
+    color: #edd;
+}
+
+.faucet.star .star {
+    color: #ee5347;
+}
+
+.faucet.star .star:hover {
+    color: #fe6357;
+}
+
+/* === */
+
+/* ADDRESSBOOK */
+#addressbook {
+    bottom: 0;
+    left: 0;
+    width: 36em;
+    position: fixed;
+}
+
+@media screen and (max-width: 39.9375em) {
+    #addressbook {
+        width: 100%;
+    }
+}
+
+#addressbook .panel {
+    display: block;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    padding: 1em;
+    box-shadow: 1px -1px 4px rgba(0, 0, 0, 0.39);
+}
+
+#addressbook.hidden .panel {
+    display: none;
+}
+
+#addressbook .showbookbtn {
+    margin: 0;
+}
+
+#addressbook.hidden .showbookbtn {
+    display: inline;
+}
+
+/* === */
+
+footer {
+    border-top: 1px solid #eee;
+    background-color: #fafafa;
+    padding: 1em 0 2em 0;
+    margin-top: 1em;
+}
+
+.cryptoaddress {
+    font-family: monospace;
+}
+
+
+#modalMainMenu h1, #modalMainMenu h3 {
+    text-align: center;
+}
+
+#modalMainMenu ul.menu li {
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom1: 1px solid #ddd;
+    font-size: 1.2em;
+}

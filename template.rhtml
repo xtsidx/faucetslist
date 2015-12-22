@@ -1,0 +1,221 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faucet list</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+    <link rel="stylesheet" href="vendor/foundation.min.css" />
+    <link rel="stylesheet" href="vendor/foundation-icons/foundation-icons.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <br>
+  
+    <header class="row column">
+        <h1>Faucet List <a href="#" data-open="modalMainMenu" class="float-right fi-list"></a></h1>
+    </header>
+    
+    <div class="row column">
+      
+        <ul class="tabs" data-tabs id="faucets-tabs">
+            <% lists.each do |coin, list| %>
+                <li class="tabs-title <%= coin == 'BTC' ? 'is-active' : '' %>"><a href="#tab_<%= coin %>"><%= "#{coin} [#{list.length}]" %></a></li>
+            <% end %>
+        </ul>
+
+        <div class="tabs-content" data-tabs-content="faucets-tabs">
+            <% lists.each do |coin, list| %>
+                <div class="tabs-panel <%= coin == 'BTC' ? 'is-active' : '' %>" id="tab_<%= coin %>">
+                    <% list.each_with_index do |faucet, i| %>
+                    
+                    <div class="row faucet" data-faucet-id="<%== faucet[2] %>">
+                        <div class="columns text-center ifhidden"><%= i+1 %>. <%== faucet[0] %></div>
+                        <div class="small-3 medium-2 large-1 columns text-center">
+                            <a class="fi-like like" title="Like Faucet"></a> 
+                            <a class="fi-dislike dislike" title="Dislike Faucet"></a>  
+                        </div>
+                        <div class="columns small-9 medium-4 large-6">
+                            <span><%= i+1 %></span> 
+                            <a href="<%= faucet[1] %>" target="_blank" class="link"><%== faucet[0] %></a>
+                        </div>
+                        <div class="hide-for-medium columns small-12"></div>
+                        <div class="columns small-4 medium-1 large-1 text-center ">
+                            <a class="eye fi-eye"></a>
+                        </div>
+                        <div class="columns large-1 medium-2 small-4">
+                            <input type="text" class="time input-group-field">
+                        </div>
+                        <div class="columns medium-1 small-4 text-center large-1">
+                            <a class="star">&#9733;</a>
+                        </div>
+                        <div class="columns medium-2 small-12 large-2">
+                            <a class="button expanded visit" title="Vivsit faucet and start timer">Visit</a>
+                        </div>
+                    </div>
+                    
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+
+    </div>
+    
+    <div id="addressbook" class="hidden">
+        <div class="">
+            <a class="button secondary fi-address-book showbookbtn"> Address Book</a>
+        </div>
+        <div class="panel">
+            <div class="input-group">
+                <span class="input-group-label">BTC</span>
+                <input class="input-group-field" value="<%= addressbook['BTC'] %>" type="text">
+                <div class="input-group-button">
+                    <input type="submit" class="button check" value="CHECK">
+                </div>
+            </div>
+            <div class="input-group">
+                <span class="input-group-label">LTC</span>
+                <input class="input-group-field" value="<%= addressbook['LTC'] %>" type="text">
+                <div class="input-group-button">
+                    <input type="submit" class="button check" value="CHECK">
+                </div>
+            </div>
+            <div class="input-group">
+                <span class="input-group-label">PPC</span>
+                <input class="input-group-field" value="<%= addressbook['PPC'] %>" type="text">
+                <div class="input-group-button">
+                    <input type="submit" class="button check" value="CHECK">
+                </div>
+            </div>
+            <div class="input-group">
+                <span class="input-group-label">XPM</span>
+                <input class="input-group-field" value="<%= addressbook['XPM'] %>" type="text">
+                <div class="input-group-button">
+                    <input type="submit" class="button check" value="CHECK">
+                </div>
+            </div>
+            <div class="input-group">
+                <span class="input-group-label">DOGE</span>
+                <input class="input-group-field" value="<%= addressbook['DOGE'] %>" type="text">
+                <div class="input-group-button">
+                    <input type="submit" class="button check" value="CHECK">
+                </div>
+            </div>
+            <div class="input-group">
+                <span class="input-group-label">DASH</span>
+                <input class="input-group-field" value="<%= addressbook['DASH'] %>" type="text">
+                <div class="input-group-button">
+                    <input type="submit" class="button check" value="CHECK">
+                </div>
+            </div>
+            <a class="button save expanded small secondary">Save address book</a>
+        </div>
+    </div>
+    
+    <footer class="row">
+        <div class="columns medium-12 small-12 text-center">
+            <p>
+                Manage your own Faucets List! | 
+                Contact me <a href="mailto:xtsidx@gmail.com" class="fi-mail"> xtsidx@gmail.com</a> | 
+                Fork me on <a target="_blank" href="https://github.com/xtsidx/faucetslist" class="fi-social-github"> GitHub</a>!
+            </p>
+            <p>© 2015 xtsidx, <a target="_blank" href="http://www.gnu.org/licenses/gpl-3.0.html">GPLv3 License</a>.</p>
+        </div>
+        <div class="columns medium-12">
+            <hr>
+            <h5 class="text-center">Donate</h5>
+            <div class="columns medium-6 text-center">
+                BTC: <span class="cryptoaddress">17kNTjBbJH1KDAtRwUy86DcndzBcuyVo4k</span><br>
+                LTC: <span class="cryptoaddress">Lf4dNMYvb4a3HmqUkSChW6FUgpyVQFJjiq</span><br>
+                DOGE: <span class="cryptoaddress">DBF2Vh2hFRr8jbP5nw4VdoHkq8Rhcdrajy</span><br>
+            </div>
+            <div class="columns medium-6 text-center">
+                DASH: <span class="cryptoaddress">XdshCgW2Vsyr6jrjxDek5VaLh6tPHKLraD</span><br>
+                PPC: <span class="cryptoaddress">PW7QjrdDC1M3Exd7pNxjBZZKKiR681jLgm</span><br>
+                XPM: <span class="cryptoaddress">AMXcYuE4rBNeoBXM2vs8HZQoWxd7Th4jk6</span><br>
+            </div>
+        </div>
+    </footer>
+    
+    
+    <div class="reveal large" id="modalMainMenu" data-reveal>
+        <h1>MENU</h1>
+        <div class="row">
+            <div class="columns medium-6">
+                <h3>Data</h3>
+                <ul class="menu vertical">
+                    <li><a href="#" data-close id="btn_savenow">SAVE NOW</a></li>
+                    <li><a href="#" data-close id="btn_compactdata">Compact and Save</a></li>
+                    <li><a href="#" data-close id="btn_delnotfounds" title="Delete not founds faucets from data">Delete not founds</a></li>
+                    <li><a href="#" data-close data-open="modalSetData">Set Data</a></li>
+                    <li><a href="#" data-close data-open="modalGetData" id="btn_getdata">Get Data</a></li>
+                </ul>
+            </div>
+            <div class="columns medium-6">
+                <h3>List</h3>
+                <ul class="menu vertical">
+                    <li><a href="#" data-close id="btn_unstarall">Unstar all</a></li>
+                    <li><a href="#" data-close id="btn_unlikeall">Unlike all</a></li>
+                    <li><a href="#" data-close id="btn_undislikeall">Undislike all</a></li>
+                    <li><a href="#" data-close id="btn_unvisitall">Unvisit all</a></li>
+                    <li><a href="#" data-close id="btn_delalltimes">Del All Times</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <h3>Show and Hide</h3>
+            <div class="columns medium-6">
+                <ul class="menu vertical">
+                    <li><a href="#" data-close id="btn_showall">Show all</a></li>
+                    <li><a href="#" data-close id="btn_hideall">Hide all</a></li>
+                    <li><a href="#" data-close id="btn_togglevisible">Toggle all</a></li>
+                    <li><a href="#" data-close id="btn_showstared">Show Stared</a></li>
+                    <li><a href="#" data-close id="btn_hidestared">Hide Stared</a></li>
+                    <li><a href="#" data-close id="btn_showvisited">Show Visited</a></li>
+                    <li><a href="#" data-close id="btn_hidevisited">Hide Visited</a></li>
+                </ul>
+            </div>
+            <div class="columns medium-6">
+                <ul class="menu vertical">
+                    <li><a href="#" data-close id="btn_showdisliked">Show Disliked</a></li>
+                    <li><a href="#" data-close id="btn_hidedisliked">Hide Disliked</a></li>
+                    <li><a href="#" data-close id="btn_showliked">Show Liked</a></li>
+                    <li><a href="#" data-close id="btn_hideliked">Hide Liked</a></li>
+                    <li><a href="#" data-close id="btn_showtimed">Show Timed</a></li>
+                    <li><a href="#" data-close id="btn_hidetimed">Hide Timed</a></li>
+                </ul>
+            </div>
+        </div>
+        <button class="close-button" data-close type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    
+    <div class="reveal large" id="modalGetData" data-reveal>
+        <h1>Get Data</h1>
+        <textarea style="height:16em"></textarea>
+        <button class="close-button" data-close type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    
+    <div class="reveal large" id="modalSetData" data-reveal>
+        <h1>Set Data</h1>
+        <textarea style="height:16em" placeholder="Paste Data here..."></textarea>
+        <a class="button expanded" id="btn_setdata">Set Data</a>
+        <button class="close-button" data-close type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <script src="vendor/jquery.min.js"></script>
+    <script src="vendor/what-input.min.js"></script>
+    <script src="vendor/foundation.min.js"></script>
+    <script src="vendor/noty/jquery.noty.packaged.min.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    
+  </body>
+</html>
