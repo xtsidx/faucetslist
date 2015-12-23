@@ -35,8 +35,13 @@ Faucets List
 Donate
 ---
 BTC: 17kNTjBbJH1KDAtRwUy86DcndzBcuyVo4k
+
 LTC: Lf4dNMYvb4a3HmqUkSChW6FUgpyVQFJjiq
+
 DOGE: DBF2Vh2hFRr8jbP5nw4VdoHkq8Rhcdrajy
+
 DASH: XdshCgW2Vsyr6jrjxDek5VaLh6tPHKLraD
+
 PPC: PW7QjrdDC1M3Exd7pNxjBZZKKiR681jLgm
+
 XPM: AMXcYuE4rBNeoBXM2vs8HZQoWxd7Th4jk6
